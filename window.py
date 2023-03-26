@@ -164,7 +164,7 @@ class Window():
         return
 
     def run(self):
-        self.currentScene = self.scenes[2]
+        self.currentScene = self.scenes[1]
         self.windowWrapper.addChild(self.currentScene.sceneWrapper)
         self.currentScene.start()
 

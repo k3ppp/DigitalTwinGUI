@@ -28,8 +28,10 @@ class Opcua:
     POLLING_RATE = 48
 
     def __init__(self, host):
-        self.OpcUaHost = host #'oct.tpc://172.31.1.236:4840/server/'
+        self.OpcUaHost = 'oct.tpc://localhost:4840/server/'
         self.opcuaClient = Client(self.OpcUaHost)
+        self.opcuaClient.load_client_certificate('server_cert.der')
+        self.opcuaClient.load_private_key('server_key.pem')
         asyncio.run(self.opcuaClient.connect())
         self.nodeDict = {}
 

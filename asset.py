@@ -51,8 +51,6 @@ class Assets:
         Assets.SHELF = Assets.loadModelFile('res/models/Objects/Shelving1.stl', createTransformationMatrix(0, 0, 0, 90, 0, 0))
 
         Assets.BAD_APPLE_VID = Assets.loadVideo('res/videos/badapple.mp4')
-
-        Assets.CUBE_TEX = Assets.loadTexture('res/textures/cube.jpg', flipY=True)
         
         Assets.TEXT_SHADER = Assets.linkShaders('res/shader/textureVertex.glsl', 'res/shader/textFragment.glsl')
         Assets.IMAGE_SHADER = Assets.linkShaders('res/shader/textureVertex.glsl', 'res/shader/imageFragment.glsl')
@@ -83,6 +81,7 @@ class Assets:
         Assets.SCREEN = Model(vertices=screenVertices)
 
         Assets.INIT = True
+    
     @staticmethod
     def loadFont(fontFile, size=48*64):
         print(f'Loading font: {fontFile}')

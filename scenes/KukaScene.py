@@ -95,9 +95,6 @@ class KukaScene(Scene):
             createTransformationMatrix(0, 0, roomHeight, -90, 0, 0).dot(createScaleMatrix(roomDim[0], roomHeight, 1)))
 
     def __addFurniture(self):
-        # 180
-        # 80
-        # 210
         self.benches = [0]*5
         self.benches[0] = self.modelRenderer.addModel(Assets.TABLES[1], createTransformationMatrix(7-0.4, 0.8+1.05, 0.85, 0, 0, 0))
         self.benches[1] = self.modelRenderer.addModel(Assets.TABLES[1], createTransformationMatrix(7-1.05, 0.4, 0.85, 0, 0, 90))
@@ -124,11 +121,7 @@ class KukaScene(Scene):
         self.modelRenderer.setColor(self.tubeholderIds[3], (0.3, 0.3, 0.3, 1))
 
         self.screenId = self.modelRenderer.addModel(Assets.SCREEN, createTransformationMatrix(6.99, 0.8+2.1+0.9-1, 0.9, 0, -90, 0))
-        # self.modelRenderer.setTexture(self.screenId, self.armStream.texture)
         self.modelRenderer.setColor(self.screenId, (1,1,1,1))
-
-        # 250
-        # 60
 
         self.shelves = [0]*3
         self.shelves[0] = self.modelRenderer.addModel(Assets.SHELF, createTransformationMatrix(7-2.5, 0.8+2.1+1.8+1.3, 0, 0, 0, 0))

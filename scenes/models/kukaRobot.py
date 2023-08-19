@@ -78,12 +78,12 @@ class KukaRobot(IModel):
                     self.__getNodeName('d_Joi5'),
                     self.__getNodeName('d_Joi6'),
                     self.__getNodeName('d_Joi7'),
-                ], self.opcuaReceiverContainer, 'oct.tpc://172.31.1.236:4840/server/')
+                ], self.opcuaReceiverContainer, 'oct.tpc://172.32.1.236:4840/server/')
         self.forceReceiver = OpcuaReceiver([
                     self.__getNodeName('d_ForX'),
                     self.__getNodeName('d_ForY'),
                     self.__getNodeName('d_ForZ'),
-                ], self.opcuaReceiverContainer, 'oct.tpc://172.31.1.236:4840/server/')
+                ], self.opcuaReceiverContainer, 'oct.tpc://172.32.1.236:4840/server/')
 
     def update(self):
         self.__updateFromOpcua()
@@ -247,8 +247,8 @@ class KukaRobotTwin:
                     self.__getNodeName('c_Start'),
                     self.__getNodeName('f_Ready'),
                     self.__getNodeName('f_End'),
-                ], self.opcuaReceiverContainer, 'oct.tpc://172.31.1.236:4840/server/')
-        self.transmitter = OpcuaTransmitter(self.opcuaTransmitterContainer, 'oct.tpc://172.31.1.236:4840/server/')
+                ], self.opcuaReceiverContainer, 'oct.tpc://172.32.1.236:4840/server/')
+        self.transmitter = OpcuaTransmitter(self.opcuaTransmitterContainer, 'oct.tpc://172.32.1.236:4840/server/')
 
     @timing
     def __createUi(self):

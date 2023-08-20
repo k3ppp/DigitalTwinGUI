@@ -186,22 +186,22 @@ class DigitalTwinLab(Scene):
         self.tables.append(self.modelRenderer.addModel(Assets.TABLE_RECT, createTransformationMatrix(0.6,5.5,0.85,0,0,0)))
         self.tables.append(self.modelRenderer.addModel(Assets.TABLE_RECT, createTransformationMatrix(0.6,3.3,0.85,0,0,0)))
 
-        self.screenStream = MJPEGStream('http://172.31.1.117:8080/?action=streams')
+        self.screenStream = MJPEGStream('http://172.32.1.117:8080/?action=streams')
         self.screen = []
         self.screen.append(self.modelRenderer.addModel(Assets.SCREEN, createTransformationMatrix(5.8,6.99,1,90,0,90)))
         self.modelRenderer.setTexture(self.screen[0], self.screenStream.texture)
 
-        self.screen.append(self.modelRenderer.addModel(Assets.SCREEN, createTransformationMatrix(11.8,6.99,1,90,0,90)))
-        self.modelRenderer.setTexture(self.screen[1], self.screenStream.texture)
+        # self.screen.append(self.modelRenderer.addModel(Assets.SCREEN, createTransformationMatrix(11.8,6.99,1,90,0,90)))
+        # self.modelRenderer.setTexture(self.screen[1], self.screenStream.texture)
 
-        self.screen.append(self.modelRenderer.addModel(Assets.SCREEN, createTransformationMatrix(8.8,6.99,1,90,0,90)))
-        self.modelRenderer.setTexture(self.screen[2], self.screenStream.texture)
+        # self.screen.append(self.modelRenderer.addModel(Assets.SCREEN, createTransformationMatrix(8.8,6.99,1,90,0,90)))
+        # self.modelRenderer.setTexture(self.screen[2], self.screenStream.texture)
 
-        self.screen.append(self.modelRenderer.addModel(Assets.SCREEN, createTransformationMatrix(0.01,6.1,1,90,90,90)))
-        self.modelRenderer.setTexture(self.screen[3], self.screenStream.texture)
+        # self.screen.append(self.modelRenderer.addModel(Assets.SCREEN, createTransformationMatrix(0.01,6.1,1,90,90,90)))
+        # self.modelRenderer.setTexture(self.screen[3], self.screenStream.texture)
 
-        self.screen.append(self.modelRenderer.addModel(Assets.SCREEN, createTransformationMatrix(0.01,3.2,1,90,90,90)))
-        self.modelRenderer.setTexture(self.screen[4], self.screenStream.texture)
+        # self.screen.append(self.modelRenderer.addModel(Assets.SCREEN, createTransformationMatrix(0.01,3.2,1,90,90,90)))
+        # self.modelRenderer.setTexture(self.screen[4], self.screenStream.texture)
 
 
     def handleUiEvents(self, event):

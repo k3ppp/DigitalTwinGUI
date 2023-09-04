@@ -144,10 +144,10 @@ class DigitalTwinLab(Scene):
         self.bases.append(base)
         self.arms[base] = arm
 
-        self.hamster = GenericModel(self.window, self.modelRenderer, Assets.SCREENSQ, np.matmul(createTransformationMatrix(0,0,-0.5,90,0,90), createScaleMatrix(0.2,0.2,0.2)))
-        self.hamsterPlayer = VideoPlayer.fromCapture(Assets.HAMSTER, fps=30)
-        self.modelRenderer.setTexture(self.hamster.modelId, self.hamsterPlayer.texture)
-        self.modelRenderer.setColor(self.hamster.modelId, (1,1,1,1))
+        # self.hamster = GenericModel(self.window, self.modelRenderer, Assets.SCREENSQ, np.matmul(createTransformationMatrix(0,0,-0.5,90,0,90), createScaleMatrix(0.2,0.2,0.2)))
+        # self.hamsterPlayer = VideoPlayer.fromCapture(Assets.HAMSTER, fps=30)
+        # self.modelRenderer.setTexture(self.hamster.modelId, self.hamsterPlayer.texture)
+        # self.modelRenderer.setColor(self.hamster.modelId, (1,1,1,1))
 
         base = GenericModel(self.window, self.modelRenderer, Assets.KUKA_FLEX, createTransformationMatrix(6, 6, 0.89, 0, 0, -90))
         arm = KukaRobotTwin(self.window, createTransformationMatrix(0.315, 0, 0, 0, 0, 0), 24, 'R4', self.modelRenderer, hasForceVector=True, hasGripper=True)
@@ -227,7 +227,7 @@ class DigitalTwinLab(Scene):
             self.renderWindow.updateWidth(COMPOUND(RELATIVE(T_W, 1, P_W), ABSOLUTE(T_W, -2*DigitalTwinLab.UI_PADDING)))
     
     def update(self, delta):
-        self.hamsterPlayer.update(delta) 
+        # self.hamsterPlayer.update(delta) 
 
         self.__updateEnv(delta)
         self.__updateModelPos()
@@ -240,7 +240,7 @@ class DigitalTwinLab(Scene):
         for base in self.arms:
             self.arms[base].setAttach(base.getFrame())
 
-        self.hamster.setAttach(self.bases[0].getFrame())
+        # self.hamster.setAttach(self.bases[0].getFrame())
         
         return
     

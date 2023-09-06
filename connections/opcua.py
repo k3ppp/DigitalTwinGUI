@@ -28,7 +28,7 @@ class Opcua:
     MAX_POLLING_RATE = 30
 
     def __init__(self, host):
-        self.OpcUaHost = host #'oct.tpc://172.31.1.236:4840/server/'
+        self.OpcUaHost = host #'oct.tpc://172.32.1.236:4840/server/'
         self.opcuaClient = Client(self.OpcUaHost)
         asyncio.run(self.opcuaClient.connect())
         self.nodeDict = {}

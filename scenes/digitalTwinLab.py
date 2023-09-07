@@ -211,9 +211,9 @@ class DigitalTwinLab(Scene):
         self.screen.append(self.modelRenderer.addModel(Assets.SCREEN, createTransformationMatrix(8.8,6.99,1,90,0,90)))
         self.modelRenderer.setTexture(self.screen[2], self.screenStreams[2].texture)
         self.screen.append(self.modelRenderer.addModel(Assets.SCREEN, createTransformationMatrix(0.01,6.1,0.885,90,90,90)))
-        self.modelRenderer.setTexture(self.screen[3], self.screenStreams[0].texture)
+        self.modelRenderer.setTexture(self.screen[3], self.screenStreams[1].texture)
         self.screen.append(self.modelRenderer.addModel(Assets.SCREEN, createTransformationMatrix(0.01,3.2,0.885,90,90,90)))
-        self.modelRenderer.setTexture(self.screen[4], self.screenStreams[1].texture)
+        self.modelRenderer.setTexture(self.screen[4], self.screenStreams[0].texture)
 
     def handleUiEvents(self, event):
         [arm.handleEvents(event) for arm in self.arms.values()]

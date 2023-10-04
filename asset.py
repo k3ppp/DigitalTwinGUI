@@ -71,6 +71,7 @@ class Assets:
         Assets.POLE = Assets.loadModelFile('res/models/pole.stl', createScaleMatrix(10, 10, 10))
 
         Assets.ENDER3_3D_PRINTER = Assets.loadModelFile('res/models/Objects/Ender3-V2.STL')
+        Assets.PrusaXL = Assets.loadModelFile('res/models/Prusa XL.stl')
         Assets.SHELF = Assets.loadModelFile('res/models/Objects/Shelving1.stl', createTransformationMatrix(0, 0, 0, 90, 0, 0))
 
         Assets.BAD_APPLE_VID = Assets.loadVideo('res/videos/badapple.mp4')

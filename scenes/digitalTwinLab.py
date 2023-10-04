@@ -196,6 +196,9 @@ class DigitalTwinLab(Scene):
         self.tables.append(self.modelRenderer.addModel(Assets.TABLE_RECT, createTransformationMatrix(9,7-0.5,0.85,0,0,90)))
         self.tables.append(self.modelRenderer.addModel(Assets.TABLE_RECT, createTransformationMatrix(7,6,0.85,0,0,0))) #
         self.tables.append(self.modelRenderer.addModel(Assets.TABLE_RECT, createTransformationMatrix(0.6,3.3,0.85,0,0,0)))
+        
+        self.Printer = []
+        self.Printer.append(self.modelRenderer.addModel(Assets.PrusaXL, createTransformationMatrix(0.6,3.3,0.85,0,0,0)))
 
         self.screenStreams = []
         self.screenStreams.append(MJPEGStream('http://172.32.1.117:8080/?action=streams'))

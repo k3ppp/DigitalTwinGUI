@@ -148,17 +148,17 @@ class DigitalTwinLab(Scene):
         self.bases = []
         self.arms = {}
 
-        base = GenericModel(self.window, self.modelRenderer, Assets.KUKA_FLEX, createTransformationMatrix(8, 5, 0.89, 0, 0, 90))
+        base = GenericModel(self.window, self.modelRenderer, Assets.KUKA_FLEX, createTransformationMatrix(6.3, 4.5, 0.89, 0, 0, 0))
         arm = KukaRobotTwin(self.window, createTransformationMatrix(0.315, 0, 0, 0, 0, 0), 23, 'R3', self.modelRenderer, hasForceVector=True, hasGripper=True)
-        arm.setLiveColors([(1, 51/255, 51/255, 0.7)for i in range(9)])
+        arm.setLiveColors([(1, 51/255, 51/255, 0.95)for i in range(9)])
         arm.setTwinColors([(1, 178/255, 102/255, 0.0)for i in range(9)])
         self.bases.append(base)
         self.arms[base] = arm
 
-        self.hamster = GenericModel(self.window, self.modelRenderer, Assets.SCREENSQ, np.matmul(createTransformationMatrix(0,0,-0.5,90,0,90), createScaleMatrix(0.2,0.2,0.2)))
-        self.hamsterPlayer = VideoPlayer.fromCapture(Assets.HAMSTER, fps=30)
-        self.modelRenderer.setTexture(self.hamster.modelId, self.hamsterPlayer.texture)
-        self.modelRenderer.setColor(self.hamster.modelId, (1,1,1,1))
+        # self.hamster = GenericModel(self.window, self.modelRenderer, Assets.SCREENSQ, np.matmul(createTransformationMatrix(0,0,-0.5,90,0,90), createScaleMatrix(0.2,0.2,0.2)))
+        # self.hamsterPlayer = VideoPlayer.fromCapture(Assets.HAMSTER, fps=30)
+        # self.modelRenderer.setTexture(self.hamster.modelId, self.hamsterPlayer.texture)
+        # self.modelRenderer.setColor(self.hamster.modelId, (1,1,1,1))
 
         base = GenericModel(self.window, self.modelRenderer, Assets.KUKA_FLEX, createTransformationMatrix(6, 6, 0.89, 0, 0, -90))
         arm = KukaRobotTwin(self.window, createTransformationMatrix(0.315, 0, 0, 0, 0, 0), 24, 'R4', self.modelRenderer, hasForceVector=True, hasGripper=False)
@@ -167,14 +167,14 @@ class DigitalTwinLab(Scene):
         self.bases.append(base)
         self.arms[base] = arm
         
-        base = GenericModel(self.window, self.modelRenderer, Assets.OMNIMOVE, createTransformationMatrix(14, 1, 0.7, 0, 0, 0))
+        base = GenericModel(self.window, self.modelRenderer, Assets.OMNIMOVE, createTransformationMatrix(11.3, 2.3, 0.7, 0, 0, 90))
         arm = KukaRobotTwin(self.window, createTransformationMatrix(0.363, -0.184, 0, 0, 0, -90), 21, 'R1', self.modelRenderer, hasForceVector=True, hasGripper=True)
         arm.setLiveColors([(0, 1, 0, 0.7)for i in range(9)])
         arm.setTwinColors([(102/255, 1, 178/255, 0.0)for i in range(9)])
         self.bases.append(base)
         self.arms[base] = arm
         
-        base = GenericModel(self.window, self.modelRenderer, Assets.OMNIMOVE, createTransformationMatrix(14, 2, 0.7, 0, 0, 0))
+        base = GenericModel(self.window, self.modelRenderer, Assets.OMNIMOVE, createTransformationMatrix(13.4, 1.5, 0.7, 0, 0, 0))
         arm = KukaRobotTwin(self.window, createTransformationMatrix(0.363, -0.184, 0, 0, 0, -90), 22, 'R2', self.modelRenderer, hasForceVector=True, hasGripper=True)
         arm.setLiveColors([(0, 0.5, 1.0, 0.7)for i in range(9)])
         arm.setTwinColors([(153/255, 153/255, 1, 0.0)for i in range(9)])
@@ -187,21 +187,23 @@ class DigitalTwinLab(Scene):
         self.shelves = []
         self.shelves.append(self.modelRenderer.addModel(Assets.SHELF, createTransformationMatrix(14.70,2.4,0,0,0,-90)))
         self.shelves.append(self.modelRenderer.addModel(Assets.SHELF, createTransformationMatrix(12.1,0,0,0,0,0)))
-        self.shelves.append(self.modelRenderer.addModel(Assets.SHELF, createTransformationMatrix(11.35,2.4,0,0,0,-90)))
+        self.shelves.append(self.modelRenderer.addModel(Assets.SHELF, createTransformationMatrix(6.6,6.0,0,0,0,0)))
         self.shelves.append(self.modelRenderer.addModel(Assets.SHELF, createTransformationMatrix(16.75,4,0,0,0,-90)))
 
         self.tables = []
         self.tables.append(self.modelRenderer.addModel(Assets.TABLE_RECT, createTransformationMatrix(2.8,7-0.5,0.85,0,0,90)))
         self.tables.append(self.modelRenderer.addModel(Assets.TABLE_SQUARE, createTransformationMatrix(4.8,7-0.9,0.85,0,0,0)))
-        self.tables.append(self.modelRenderer.addModel(Assets.TABLE_RECT, createTransformationMatrix(9,7-0.5,0.85,0,0,90)))
-        self.tables.append(self.modelRenderer.addModel(Assets.TABLE_RECT, createTransformationMatrix(7,6,0.85,0,0,0))) #
-        self.tables.append(self.modelRenderer.addModel(Assets.TABLE_RECT, createTransformationMatrix(0.6,3.3,0.85,0,0,0)))
+        # self.tables.append(self.modelRenderer.addModel(Assets.TABLE_RECT, createTransformationMatrix(9,7-0.5,0.85,0,0,90)))
+        self.tables.append(self.modelRenderer.addModel(Assets.TABLE_RECT, createTransformationMatrix(10.1,6.5,0.85,0,0,90))) 
+        self.tables.append(self.modelRenderer.addModel(Assets.TABLE_RECT, createTransformationMatrix(0.6,3.1,0.85,0,0,0)))
+        self.tables.append(self.modelRenderer.addModel(Assets.TABLE_RECT, createTransformationMatrix(0.6,5.1,0.85,0,0,0)))
+        # self.tables.append(self.modelRenderer.addModel(Assets.TABLE_RECT, createTransformationMatrix(7,0.8,0.85,0,0,90)))
         
         # self.Printer = []
         # self.Printer.append(self.modelRenderer.addModel(Assets.PrusaXL, createTransformationMatrix(0.6,3.3,0.85,0,0,0)))
 
         self.screenStreams = []
-        self.screenStreams.append(MJPEGStream('http://172.32.1.117:8080/?action=streams'))
+        self.screenStreams.append(MJPEGStream('http://172.32.1.226:8080/?action=streams'))
         # self.screenStreams.append(MJPEGStream('http://172.32.1.225:8080/?action=streams'))
         # self.screenStreams.append(MJPEGStream('http://172.32.1.226:8080/?action=streams'))
         # self.screenStreams.append(MJPEGStream('http://172.32.1.227:8080/?action=streams'))
@@ -215,8 +217,8 @@ class DigitalTwinLab(Scene):
         # self.modelRenderer.setTexture(self.screen[2], self.screenStreams[3].texture)
         # self.screen.append(self.modelRenderer.addModel(Assets.SCREEN, createTransformationMatrix(0.01,6.1,0.885,90,90,90)))
         # self.modelRenderer.setTexture(self.screen[3], self.screenStreams[2].texture)
-        # self.screen.append(self.modelRenderer.addModel(Assets.SCREEN, createTransformationMatrix(0.01,3.2,0.885,90,90,90)))
-        # self.modelRenderer.setTexture(self.screen[4], self.screenStreams[1].texture)
+        # self.screen.append(self.modelRenderer.addModel(Assets.SCREEN, createTransformationMatrix(12,6.99,1,90,0,90)))
+        # self.modelRenderer.setTexture(self.screen[1], self.screenStreams[1].texture)
 
     def handleUiEvents(self, event):
         [arm.handleEvents(event) for arm in self.arms.values()]
@@ -241,7 +243,7 @@ class DigitalTwinLab(Scene):
             self.renderWindow.updateWidth(COMPOUND(RELATIVE(T_W, 1, P_W), ABSOLUTE(T_W, -2*DigitalTwinLab.UI_PADDING)))
     
     def update(self, delta):
-        self.hamsterPlayer.update(delta) 
+        # self.hamsterPlayer.update(delta) 
 
         self.__updateEnv(delta)
         self.__updateModelPos()
@@ -254,7 +256,7 @@ class DigitalTwinLab(Scene):
         for base in self.arms:
             self.arms[base].setAttach(base.getFrame())
 
-        self.hamster.setAttach(self.bases[0].getFrame())
+        # self.hamster.setAttach(self.bases[0].getFrame())
         
         return
     

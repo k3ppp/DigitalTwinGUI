@@ -78,7 +78,7 @@ class Opcua:
             time.sleep(max(0, (delay-time_past)/1000000000))
             rate += 1
             if accum >= 10000000000:
-                # print(f'Opcua receiver polling rate: {int(rate/10)}/s')
+                print(f'Opcua receiver polling rate: {int(rate/10)}/s')
                 accum -= 10000000000
                 rate = 0
         print(f'Opcua receiver thread stopped: {host}')

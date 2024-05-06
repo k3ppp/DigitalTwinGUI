@@ -2,7 +2,7 @@ from connections.opcua import *
 from utils.interfaces.pollController import PollController
 
 class OpcuaReceiver(PollController):
-    def __init__(self, data, container, host, pollingRate=30):
+    def __init__(self, data, container, host, pollingRate=10):
         self.data = data
         self.container = container
         self.host = host

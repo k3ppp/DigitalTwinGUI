@@ -193,13 +193,14 @@ class DigitalTwinLab(Scene):
 
     def __addFurniture(self):
         self.models.append(SimpleModel(self.modelRenderer, Assets.SHELF, createTransformationMatrix(16.70,3.6,0,0,0,-90)))
-        self.models.append(SimpleModel(self.modelRenderer, Assets.SHELF, createTransformationMatrix(0.9,2,0,0,0,90)))
+        self.models.append(SimpleModel(self.modelRenderer, Assets.SHELF, createTransformationMatrix(0.4,3.9,0,0,0,0)))
         self.models.append(SimpleModel(self.modelRenderer, Assets.SHELF, createTransformationMatrix(0.9,4.5,0,0,0,90)))
-        self.models.append(SimpleModel(self.modelRenderer, Assets.SHELF, createTransformationMatrix(0.9,6,0,0,0,0)))
+        self.models.append(SimpleModel(self.modelRenderer, Assets.SHELF, createTransformationMatrix(0.9,6.2,0,0,0,0)))
         
         self.models.append(SimpleModel(self.modelRenderer, Assets.TABLE_RECT, createTransformationMatrix(4.5,7-0.5,0.85,0,0,90)))
         self.models.append(SimpleModel(self.modelRenderer, Assets.TABLE_SQUARE, createTransformationMatrix(10.3,7-0.9,0.85,0,0,0)))
         self.models.append(SimpleModel(self.modelRenderer, Assets.TABLE_RECT, createTransformationMatrix(7,0.8,0.85,0,0,90)))
+        self.models.append(SimpleModel(self.modelRenderer, Assets.TABLE_RECT, createTransformationMatrix(0.8,2.8,0.85,0,0,0)))
 
         self.models.append(SimpleModel(self.modelRenderer, Assets.PRUSA_XL, createTransformationMatrix(5.8,6.6,0.5,0,0,-90)))
         self.models.append(SimpleModel(self.modelRenderer, Assets.PRUSA_XL, createTransformationMatrix(5.8,6.6,1.35,0,0,-90)))
@@ -216,7 +217,7 @@ class DigitalTwinLab(Scene):
         # self.models.append(tmp)
 
         self.models.append(SimpleModel(self.modelRenderer, Assets.THE_MATRIX, createTransformationMatrix(5.6,6,0,0,0,0)))
-        self.models.append(SimpleModel(self.modelRenderer, Assets.KUKA_EDU, createTransformationMatrix(4,1.2,0,0,0,-90)))
+        self.models.append(SimpleModel(self.modelRenderer, Assets.KUKA_EDU, createTransformationMatrix(4.4,1.3,0,0,0,180)))
 
         self.leftBtn = SimpleModel(self.modelRenderer, Assets.ARROW_BTN, np.matmul(createTransformationMatrix(4.3,6.5,0.85,0,0,180),createScaleMatrix(8, 8, 8)))
         self.rightBtn = SimpleModel(self.modelRenderer, Assets.ARROW_BTN, np.matmul(createTransformationMatrix(4.7,6.5,0.85,0,0,0),createScaleMatrix(8, 8, 8)))

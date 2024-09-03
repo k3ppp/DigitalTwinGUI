@@ -192,8 +192,8 @@ class DigitalTwinLab(Scene):
         self.models.append(arm)
 
     def __addFurniture(self):
-        self.models.append(SimpleModel(self.modelRenderer, Assets.SHELF, createTransformationMatrix(16.70,3.6,0,0,0,-90)))
-        self.models.append(SimpleModel(self.modelRenderer, Assets.SHELF, createTransformationMatrix(0.9,10.2,0,0,0,0)))
+        self.models.append(SimpleModel(self.modelRenderer, Assets.SHELF, createTransformationMatrix(17.2,3.6,0,0,0,-90)))
+        self.models.append(SimpleModel(self.modelRenderer, Assets.SHELF, createTransformationMatrix(9.5,6.2,0,0,0,0)))
         self.models.append(SimpleModel(self.modelRenderer, Assets.SHELF, createTransformationMatrix(0.9,4.5,0,0,0,90)))
         self.models.append(SimpleModel(self.modelRenderer, Assets.SHELF, createTransformationMatrix(0.9,6.2,0,0,0,0)))
         
